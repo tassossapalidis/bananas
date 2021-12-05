@@ -1,82 +1,99 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+<head>
     <title>Bananas Project</title>
     <meta name="description" content="Bananas Project" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="./style/style.css" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <meta property="og:image" content="./assets/banana_link.jpeg" />
     <link rel="image_src" href="./assets/banana_link.jpeg" />
-    <style>
-      #scrolly {
-        position: relative;
-      }
+    <link rel="stylesheet" href="./style/style.css">
+</head>
 
-      article {
-        position: relative;
-        padding: 0 1rem;
-        margin: 0 auto;
-        width: 33%;
-      }
+<body>
 
-      .step {
-        margin: 2rem auto 4rem auto;
-        background-color: #3b3b3b;
-        color: #fff;
-      }
-
-      .step.is-active {
-        background-color: goldenrod;
-        color: #3b3b3b;
-      }
-
-      .step p {
-        text-align: center;
-        padding: 1rem;
-        font-size: 1.5rem;
-      }
-    </style>
-  </head>
-
-  <body>
-    <main>
-      <section id="intro">
-        <h1 class="intro__hed">
-          Bananas
-          <img src="./assets/banana_0.png" width=100 id="topimage1" />
-          <img src="./assets/banana_0.png" width=100 id="topimage2" />
-        </h1>
-        <p class="intro__dek">
-          Hehe
+<h1>
+    Bananas Project
+    <img src="./assets/banana_0.png" width=100 id="topimage1" />
+    <img src="./assets/banana_0.png" width=100 id="topimage2" />
+</h1>
+<div>
+    This is where we'll put an intro for our project.
+</div>
+<div id='container' class='container-1'>
+    <div id='graph'>
+        <h2>
+            Map of Net Exports by Country
+        </h2>
+        <!-- This p element is for the range slider -->
+        <p>
+            <label for="display_year" 
+                   style="display: inline-block; width: 240px; text-align: right; background: #ffe135">
+                   Year: <span id="display_year-value">2019</span>
+            </label>
+            <input type="range" min="1961" max="2019" id="display_year">
         </p>
-      </section>
+        <div id='map-area'></div>
+    </div>
+    <div id='sections'>
+        <div>
+            <h2>
+                What does the global banana trade look like?
+            </h2>
+            This is where I'm going to put my section's info. 
+        </div>
+        <div>
+            <h3>
+                Some Viz1 subheader here
+            </h3>
+            More info.
+        </div>
+        <div>
+            <h3>
+                Another Viz1 subheader
+            </h3>
+            More info.
+        </div>
+        <div>
+            <h3>
+                Another Viz1 subheader
+            </h3>
+            More info.
+        </div>
+        <div>
+            <h3>
+                Another Viz1 subheader
+            </h3>
+            More info.
+        </div>
+        <div>
+            <h3>
+                Another Viz1 subheader
+            </h3>
+            More info.
+        </div>
+</div>
 
-      <section id="scrolly">
-        <article>
-          <div class="step" data-step="1">
-            <p>STEP 1</p>
-          </div>
-          <div class="step" data-step="2">
-            <p>STEP 2</p>
-          </div>
-          <div class="step" data-step="3">
-            <p>STEP 3</p>
-          </div>
-          <div class="step" data-step="4">
-            <p>STEP 4</p>
-          </div>
-        </article>
-      </section>
+<!-- PUT MORE SECTIONS HERE -->
+<!-- In .js file, create the svg element using d3.select('#map-area').append('svg')-->
+<!-- Replace #map-area with whatever you want to name your div -->
 
-      <section id="outro"></section>
-    </main>
+<h1>Conclusion</h1>
+<div>
+    Conclusion body.
+</div>
 
-    <!-- <div class='debug'></div> -->
-    <script src="https://unpkg.com/d3@5.9.1/dist/d3.min.js"></script>
-    <script src="https://unpkg.com/intersection-observer@0.5.1/intersection-observer.js"></script>
-    <script src="./style/stickyfill.min.js"></script>
-    <script src="./style/scrollama.min.js"></script>
-    <script src="./style/implementscroll.js"></script>
-  </body>
+</body>
+
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<script src="./style/graph-scroll.js"></script>
+<script>
+    d3.graphScroll()
+        .sections(d3.selectAll('#sections > div')) 
+</script>
+<script src="./style/legend.js"></script>
+<script src="./vis1.js"></script>
+<!-- Put your .js files here -->
+
 </html>
