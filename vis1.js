@@ -173,11 +173,13 @@ loadData = Promise.all([
                     .attr('class', 'name')
                     .attr('x', 50)
                     .attr('y', 50)
+                    .attr('font-family', 'copperplate')
                     .text(d.properties.name);
                 map.append('text')
                     .attr('class', 'export')
                     .attr('x', 50)
                     .attr('y', 70)
+                    .attr('font-family', 'copperplate')
                     .text(function () {
                         let val = expos.get(d.properties.name)?.get(display_year) || -1
                         if (val == -1) {
@@ -251,6 +253,7 @@ loadData = Promise.all([
                     .attr('x', plotVars.mapWidth / 4 + 15)
                     .attr('y', plotVars.mapWidth / 4 + 35)
                     .attr('font-size', 30)
+                    .attr('font-family', 'copperplate')
                     .text(function () {
                         if (line_data.length > 1) {
                             return d.properties.name
@@ -264,6 +267,7 @@ loadData = Promise.all([
                     .attr('x', plotVars.mapWidth / 4 * 3 + 25)
                     .attr('y', plotVars.mapWidth / 4 + 15)
                     .attr('fill', 'red')
+                    .attr('font-family', 'copperplate')
                     .text('X')
                     .on('mouseover', function (){
                         d3.select(this)
