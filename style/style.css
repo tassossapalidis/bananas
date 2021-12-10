@@ -50,10 +50,14 @@ font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 
 #intro {
   margin-bottom: 70px;
+  margin-left: 100px;
+  margin-right: 100px;
 }
 
 #conclusion {
   margin-bottom: 100px;
+  margin-left: 100px;
+  margin-right: 100px;
 }
 
 h1 {
@@ -79,7 +83,7 @@ div {
 }
 
 #container {
-position: relative;
+  position: relative;
 }
 
 #sections {
@@ -91,6 +95,7 @@ margin-bottom: 100px;
 opacity: .3;
 margin-left: 40px;
 margin-bottom: 20px;
+margin-right: 70px;
 text-align: left;
 }
 #sections > div:last-child {
