@@ -27,7 +27,6 @@ loadData = Promise.all([d3.csv("./data/prices_per_conso_small.csv", rowConverter
 
     //Copy data into global dataset
     original_dataset = loadData[0];
-    console.log(original_dataset);
     var index_of_year = 0
     dataset = original_dataset.filter(function (d) { return d.year == available_years[index_of_year] });
 
@@ -47,7 +46,7 @@ loadData = Promise.all([d3.csv("./data/prices_per_conso_small.csv", rowConverter
         .range([h - padding, padding]);
 
     colorScale2 = d3.scaleOrdinal()
-        .range(d3.schemeSet3);
+        .range(d3.schemeSet2);
 
     popScale = d3.scaleLinear()
         .domain([
@@ -84,7 +83,7 @@ loadData = Promise.all([d3.csv("./data/prices_per_conso_small.csv", rowConverter
                 .attr("x", xPosition)
                 .attr("y", yPosition)
                 .attr("text-anchor", "middle")
-                .attr("font-family", "sans-serif")
+                .attr('font-family', 'COPPERPLATE')
                 .attr("font-size", "11px")
                 .attr("font-weight", "bold")
                 .attr("fill", "black")
@@ -102,7 +101,7 @@ loadData = Promise.all([d3.csv("./data/prices_per_conso_small.csv", rowConverter
         .attr("x", w * 0.9)
         .attr("y", h * 0.9)
         .attr("text-anchor", "middle")
-        .attr("font-family", "sans-serif")
+        .attr('font-family', 'COPPERPLATE')
         .attr("font-size", "30px")
         .attr("fill", "black")
         .text(available_years[index_of_year]);
@@ -152,6 +151,9 @@ loadData = Promise.all([d3.csv("./data/prices_per_conso_small.csv", rowConverter
 
     //On click, update with new data			
     d3.select("pbutton")
+        .on("mouseover", function (event, d) {
+            d3.select(this).style('cursor', 'pointer');
+        })
         .on("click", function () {
 
             if (index_of_year < 3) {
@@ -163,7 +165,6 @@ loadData = Promise.all([d3.csv("./data/prices_per_conso_small.csv", rowConverter
 
 
             filtered_dataset = original_dataset.filter(function (d) { return d.year == available_years[index_of_year] });
-            // console.log(filtered_dataset);
 
             //Update scale domains
             xScale.domain([0, d3.max(filtered_dataset, function (d) { return d.conso; })]);

@@ -1,3 +1,7 @@
+* {
+  background-color: #ffff99;
+}
+
 input[type=range] {
   -webkit-appearance: none;
 }
@@ -30,9 +34,8 @@ input[type=range]:focus::-webkit-slider-runnable-track {
 
 body {
 max-width: 2000px;
-margin: 0px auto;
+margin-left: 0px auto;
 font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-background-color:  #ffe135;
 }
 
 #topimage1  {
@@ -45,19 +48,30 @@ background-color:  #ffe135;
   margin: 0 0 0 0;
 }
 
+#intro {
+  margin-bottom: 70px;
+}
+
+#conclusion {
+  margin-bottom: 100px;
+}
+
 h1 {
-margin: 50px;
-text-align: center;
+  margin: 50px;
+  text-align: center;
+  font-family: 'COPPERPLATE';
 }
 
 h2 {
   margin: 50px;
   text-align: center;
+  font-family: 'COPPERPLATE';
 }
 
 h3 {
-margin: 50px;
-text-align: center;
+  margin: 50px;
+  text-align: center;
+  font-family: 'COPPERPLATE';
 }
 
 div {
@@ -69,14 +83,14 @@ position: relative;
 }
 
 #sections {
-width: 500px;
+width: 450px;
+margin-bottom: 100px;
 }
 
 #sections > div {
-background: #ffe135;
-opacity: .8;
+opacity: .3;
 margin-left: 40px;
-margin-bottom: 200px;
+margin-bottom: 20px;
 text-align: left;
 }
 #sections > div:last-child {
@@ -89,7 +103,7 @@ opacity: 1;
 #graph {
 margin-left: 40px;
 margin-right: 20px;
-margin-bottom: 200px;
+margin-bottom: 50px;
 width: 1000px;
 position: -webkit-sticky;
 position: sticky;
@@ -115,7 +129,7 @@ float: right;
   padding: 10px;
   border-top: 1px solid;
   border-bottom: 1px solid;
-  margin-bottom: 80vh;
+  margin-bottom: 30vh;
 }
 
 pre {
@@ -128,5 +142,5 @@ h1{
 }
 
 svg {
-background-color: #ffffe0;
+  background-color: #fefddb;
 }
